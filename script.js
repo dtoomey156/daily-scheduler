@@ -49,56 +49,86 @@ var Button5 = document.getElementById("5btn")
 
 Button9.onclick = function() {
     var nine = timeBlock9a.value;
-    localStorage.setItem("9a", timeBlock9a)
+    localStorage.setItem('9a', JSON.stringify(nine));
     console.log(nine)
 }
 Button10.onclick = function() {
     var ten = timeBlock10a.value;
-    localStorage.setItem("10a", timeBlock10a)
+    localStorage.setItem('10a', JSON.stringify(ten));
     console.log(ten);
 }
 
 Button11.onclick = function() {
     var eleven = timeBlock11a.value;
-    localStorage.setItem("11a", timeBlock11a)
+    localStorage.setItem('11a', JSON.stringify(eleven));
     console.log(eleven);
 }
 
 Button12.onclick = function() {
     var twelve = timeBlock12pm.value;
-    localStorage.setItem("12p", timeBlock12pm)
+    localStorage.setItem('12p', JSON.stringify(twelve));
     console.log(twelve);
 }
     
 Button1.onclick = function() {
     var one = timeBlock1pm.value;
-    localStorage.setItem("1p", timeBlock1pm)
+    localStorage.setItem('1p', JSON.stringify(one));
     console.log(one);
 }
 
 Button2.onclick = function() {
     var two = timeBlock2pm.value;
-    localStorage.setItem("2p", timeBlock2pm)
+    localStorage.setItem('2p', JSON.stringify(two));
     console.log(two);
 }
     
 Button3.onclick = function() {
     var three = timeBlock3pm.value;
-    localStorage.setItem("3p", timeBlock3pm)
+    localStorage.setItem('3p', JSON.stringify(three));
     console.log(three);
 }
 
 Button4.onclick = function() {
     var four = timeBlock4pm.value;
-    localStorage.setItem("4p", timeBlock4pm)
+    localStorage.setItem('4p', JSON.stringify(four));
     console.log(four);
 }
 
 Button5.onclick = function() {
     var five = timeBlock5pm.value;
-    localStorage.setItem("5p", timeBlock5pm)
+    localStorage.setItem('5p', JSON.stringify(five));
     console.log(five);
 }
+
+//retrieving from local storage
+
+var lastSaved9 = JSON.parse(localStorage.getItem('9a'));
+document.getElementById('9am').value = lastSaved9;
+
+var lastSaved10 = JSON.parse(localStorage.getItem('10a'));
+document.getElementById('10am').value = lastSaved10;
+
+var lastSaved11 = JSON.parse(localStorage.getItem('11a'));
+document.getElementById('11am').value = lastSaved11;
+
+var lastSaved12 = JSON.parse(localStorage.getItem('12p'));
+document.getElementById('12pm').value = lastSaved12;
+
+var lastSaved1 = JSON.parse(localStorage.getItem('1p'));
+document.getElementById('1pm').value = lastSaved1;
+
+var lastSaved2 = JSON.parse(localStorage.getItem('2p'));
+document.getElementById('2pm').value = lastSaved2;
+
+var lastSaved3 = JSON.parse(localStorage.getItem('3p'));
+document.getElementById('3pm').value = lastSaved3;
+
+var lastSaved4 = JSON.parse(localStorage.getItem('4p'));
+document.getElementById('4pm').value = lastSaved4;
+
+var lastSaved5 = JSON.parse(localStorage.getItem('5p'));
+document.getElementById('5pm').value = lastSaved5;
+
     
     
     
