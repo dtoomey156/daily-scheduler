@@ -19,21 +19,20 @@
 //commented out javascript date function above. below is Moment.js
 
 $(document).ready(function () {
-    var date = moment().format("dddd MMMM Do");
-    var nowHour = moment().format("HH");
+    var date = moment().format('dddd MMMM Do YYYY, h:mm:ss a');
     $("#currentDay").text(date);
 })
 
 //set up timeblock variables
-var timeBlock9a = document.getElementById("9am");
-var timeBlock10a = document.getElementById("10am");
-var timeBlock11a = document.getElementById("11am");
-var timeBlock12pm = document.getElementById("12pm");
-var timeBlock1pm = document.getElementById("1pm");
-var timeBlock2pm = document.getElementById("2pm");
-var timeBlock3pm = document.getElementById("3pm");
-var timeBlock4pm = document.getElementById("4pm");
-var timeBlock5pm = document.getElementById("5pm");
+var timeBlock9a = document.getElementById("9");
+var timeBlock10a = document.getElementById("10");
+var timeBlock11a = document.getElementById("11");
+var timeBlock12pm = document.getElementById("12");
+var timeBlock1pm = document.getElementById("1");
+var timeBlock2pm = document.getElementById("2");
+var timeBlock3pm = document.getElementById("3");
+var timeBlock4pm = document.getElementById("4");
+var timeBlock5pm = document.getElementById("5");
 var Button9 = document.getElementById("9btn")
 var Button10 = document.getElementById("10btn")
 var Button11 = document.getElementById("11btn")
@@ -45,7 +44,7 @@ var Button4 = document.getElementById("4btn")
 var Button5 = document.getElementById("5btn")
 
 
-//clicking save button commits to local storage
+//clicking save button saves to local storage
 
 Button9.onclick = function() {
     var nine = timeBlock9a.value;
@@ -103,35 +102,46 @@ Button5.onclick = function() {
 //retrieving from local storage
 
 var lastSaved9 = JSON.parse(localStorage.getItem('9a'));
-document.getElementById('9am').value = lastSaved9;
+document.getElementById('9').value = lastSaved9;
 
 var lastSaved10 = JSON.parse(localStorage.getItem('10a'));
-document.getElementById('10am').value = lastSaved10;
+document.getElementById('10').value = lastSaved10;
 
 var lastSaved11 = JSON.parse(localStorage.getItem('11a'));
-document.getElementById('11am').value = lastSaved11;
+document.getElementById('11').value = lastSaved11;
 
 var lastSaved12 = JSON.parse(localStorage.getItem('12p'));
-document.getElementById('12pm').value = lastSaved12;
+document.getElementById('12').value = lastSaved12;
 
 var lastSaved1 = JSON.parse(localStorage.getItem('1p'));
-document.getElementById('1pm').value = lastSaved1;
+document.getElementById('1').value = lastSaved1;
 
 var lastSaved2 = JSON.parse(localStorage.getItem('2p'));
-document.getElementById('2pm').value = lastSaved2;
+document.getElementById('2').value = lastSaved2;
 
 var lastSaved3 = JSON.parse(localStorage.getItem('3p'));
-document.getElementById('3pm').value = lastSaved3;
+document.getElementById('3').value = lastSaved3;
 
 var lastSaved4 = JSON.parse(localStorage.getItem('4p'));
-document.getElementById('4pm').value = lastSaved4;
+document.getElementById('4').value = lastSaved4;
 
 var lastSaved5 = JSON.parse(localStorage.getItem('5p'));
-document.getElementById('5pm').value = lastSaved5;
+document.getElementById('5').value = lastSaved5;
 
-    
-    
-    
+//dynamically change color of boxes based on time
+
+var currentTime = moment().format("HH");
+
+$("input").each(function () {
+
+    if (parseInt($(this).attr("id")) > parseInt(currentTime)) { $(this).attr('class', 'future form-control h-100 description'); }
+
+    else if (parseInt($(this).attr("id")) < parseInt(currentTime)) { $(this).attr("class", "past form-control h-100 description"); }
+
+    else if (parseInt($(this).attr("id")) == parseInt(currentTime)) {
+        $(this).attr("class", "present form-control h-100 description");
+    }
+});
 
 
 
