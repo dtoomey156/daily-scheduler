@@ -28,11 +28,11 @@ var timeBlock9a = document.getElementById("9");
 var timeBlock10a = document.getElementById("10");
 var timeBlock11a = document.getElementById("11");
 var timeBlock12pm = document.getElementById("12");
-var timeBlock1pm = document.getElementById("1");
-var timeBlock2pm = document.getElementById("2");
-var timeBlock3pm = document.getElementById("3");
-var timeBlock4pm = document.getElementById("4");
-var timeBlock5pm = document.getElementById("5");
+var timeBlock1pm = document.getElementById("13");
+var timeBlock2pm = document.getElementById("14");
+var timeBlock3pm = document.getElementById("15");
+var timeBlock4pm = document.getElementById("16");
+var timeBlock5pm = document.getElementById("17");
 var Button9 = document.getElementById("9btn")
 var Button10 = document.getElementById("10btn")
 var Button11 = document.getElementById("11btn")
@@ -114,19 +114,19 @@ var lastSaved12 = JSON.parse(localStorage.getItem('12p'));
 document.getElementById('12').value = lastSaved12;
 
 var lastSaved1 = JSON.parse(localStorage.getItem('1p'));
-document.getElementById('1').value = lastSaved1;
+document.getElementById('13').value = lastSaved1;
 
 var lastSaved2 = JSON.parse(localStorage.getItem('2p'));
-document.getElementById('2').value = lastSaved2;
+document.getElementById('14').value = lastSaved2;
 
 var lastSaved3 = JSON.parse(localStorage.getItem('3p'));
-document.getElementById('3').value = lastSaved3;
+document.getElementById('15').value = lastSaved3;
 
 var lastSaved4 = JSON.parse(localStorage.getItem('4p'));
-document.getElementById('4').value = lastSaved4;
+document.getElementById('16').value = lastSaved4;
 
 var lastSaved5 = JSON.parse(localStorage.getItem('5p'));
-document.getElementById('5').value = lastSaved5;
+document.getElementById('17').value = lastSaved5;
 
 //dynamically change color of boxes based on time
 
